@@ -2,8 +2,8 @@ import { ApolloServer, gql } from 'apollo-server-express';
 import express from 'express';
 import mongoose from 'mongoose';
 
-import { typeDefs } from './typeDefs';
-import { resolvers } from './resolvers';
+import { typeDefs } from './graphql/typeDefs/typeDefs';
+import { resolvers } from './graphql/resolvers/resolvers';
 
 const startServer = async () => {
   const app = express();
