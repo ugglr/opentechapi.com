@@ -17,6 +17,7 @@ export const typeDefs = gql`
     password: String
   }
   type CPU {
+    id: ID!
     company: String!
     model: String!
     socket: String!

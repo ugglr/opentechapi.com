@@ -6,14 +6,16 @@ import gql from 'graphql-tag';
 
 const Container = styled.div`
   border-style: solid;
-  border-color: 'red';
+  border-color: red;
   margin-bottom: 1rem;
+  align-content: center;
 `;
 
 const RawDataList = () => {
   const { loading, error, data } = useQuery(gql`
     {
       cpus {
+        id
         company
         model
         socket
@@ -27,9 +29,9 @@ const RawDataList = () => {
   if (error) return <p>Error: {error}</p>;
   return (
     <div>
-      {data.cpus.map((x, i) => {
+      {data.cpus.map(x => {
         return (
-          <Container key={i}>
+          <Container key={x.id}>
             <p>{x.company}</p>
             <p>{x.model}</p>
             <p>{x.socket}</p>
