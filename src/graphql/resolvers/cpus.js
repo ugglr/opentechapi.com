@@ -9,7 +9,7 @@ export const createCPU = async (_, { company, model, socket }) => {
       throw new Error('This cpu already exists');
     }
     const newCPU = new CPU({
-      company: company,
+      manufacturer: company,
       model: model,
       socket: socket
     });

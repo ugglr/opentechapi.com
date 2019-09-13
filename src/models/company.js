@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 
 const companySchema = {
-  company: {
+  name: {
     type: String,
     required: true
   }

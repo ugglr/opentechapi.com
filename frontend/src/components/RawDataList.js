@@ -18,7 +18,7 @@ const RawDataList = () => {
     {
       cpus {
         id
-        company
+        manufacturer
         model
         socket
       }
@@ -35,7 +35,7 @@ const RawDataList = () => {
       {data.cpus.map(x => {
         return (
           <Container key={x.id}>
-            <p>{x.company}</p>
+            <p>{x.manufacturer}</p>
             <p>{x.model}</p>
             <p>{x.socket}</p>
           </Container>

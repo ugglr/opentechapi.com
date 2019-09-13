@@ -1,9 +1,9 @@
-import mongoose from 'mongoose';
+import mongoose, { Schema } from 'mongoose';
 
 const cpuSchema = {
-  company: {
-    type: String,
-    required: true
+  manufacturer: {
+    type: Schema.Types.ObjectId,
+    ref: 'Company'
   },
   model: {
     type: String,
