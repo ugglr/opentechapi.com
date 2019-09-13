@@ -9,18 +9,16 @@ const Container = styled.div`
   border-color: red;
   margin: 0 auto;
   margin-bottom: 1rem;
-  width: 150px;
+  width: 250px;
   border-radius: 25px;
 `;
 
-const RawDataList = () => {
+const FakeUserList = () => {
   const { loading, error, data } = useQuery(gql`
     {
-      cpus {
+      users {
         id
-        company
-        model
-        socket
+        email
       }
     }
   `);
@@ -29,15 +27,15 @@ const RawDataList = () => {
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error}</p>;
+
   return (
     <>
-      <h2>List of CPUs.</h2>
-      {data.cpus.map(x => {
+      <h2>List of fake users.</h2>
+      {data.users.map(user => {
         return (
-          <Container key={x.id}>
-            <p>{x.company}</p>
-            <p>{x.model}</p>
-            <p>{x.socket}</p>
+          <Container key={user.id}>
+            <p>{user.id}</p>
+            <p>{user.email}</p>
           </Container>
         );
       })}
@@ -45,4 +43,4 @@ const RawDataList = () => {
   );
 };
 
-export default RawDataList;
+export default FakeUserList;

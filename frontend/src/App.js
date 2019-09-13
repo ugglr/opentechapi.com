@@ -5,6 +5,7 @@ import { ApolloProvider } from '@apollo/react-hooks';
 import ApolloClient from 'apollo-boost';
 
 import RawDataList from './components/RawDataList';
+import FakeUserList from './components/FakeUserList';
 
 // ------- END OF IMPORTS ------------
 
@@ -16,8 +17,8 @@ const App = () => {
   return (
     <ApolloProvider client={client}>
       <div className='App'>
-        <h1>Hello from React</h1>
         <RawDataList />
+        <FakeUserList />
       </div>
     </ApolloProvider>
   );
